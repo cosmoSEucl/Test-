@@ -1,7 +1,12 @@
 from pathlib import Path
 
-project_root = Path(__file__).parent
+src_directory = Path(__file__).parent
+
+project_root = src_directory.parent
 
 csv_file = project_root.joinpath('data', 'example.csv')
 
-print(csv_file.exists())
+if csv_file.exists():
+    print("CSV file found.")
+else:
+    print("CSV file not found.")
